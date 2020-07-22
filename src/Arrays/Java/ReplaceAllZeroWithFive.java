@@ -9,7 +9,8 @@ public class ReplaceAllZeroWithFive {
 		return Integer.parseInt(nums);
 	}
 
-	// Time Complexity :-
+	// Time Complexity :- O(k) , k is the number of digits
+	// Space Complexity :- O(1) 
 	public int convertFiveUsingRecursion(int num) {
 
 		if (num == 0)
