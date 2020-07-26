@@ -42,12 +42,28 @@ Testcase 2: arr[0] = 4 and arr[arr[0]] = 3. Also, arr[1] = 0 and arr[arr[1]] = 4
 Testcase 3: arr[0] = 3 and arr[arr[0]] = 1. Also, arr[1] = 2 and arr[arr[1]] = 0 and so on. So, rearranging elements, we get array as 1 0 3 2.
  */
 public class RearrangeArray {
+
+	// Time complexity :- O(n)
+	// Space complexity :- O(1)
 	static void arrange(long arr[], int n) {
-		// your code here
+
+		for (int i = 0; i < n; i++)
+			arr[i] = arr[i] + (arr[(int) (arr[i])] % n) * n;
+
+		for (int i = 0; i < n; i++)
+			arr[i] = arr[i] / n;
+
+		for (long i : arr) {
+			System.out.print(i + " ");
+		}
+		System.out.println();
 	}
 
 	public static void main(String[] args) {
 		long arr[] = { 4, 0, 2, 1, 3 };
+		long arr1[] = { 3, 2, 0, 1 };
 		RearrangeArray.arrange(arr, arr.length);
+		RearrangeArray.arrange(arr1, arr1.length);
+
 	}
 }
